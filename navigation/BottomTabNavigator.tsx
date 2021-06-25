@@ -25,14 +25,14 @@ export default function BottomTabNavigator() {
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
         name="Home"
-        component={TabOneNavigator}
+        component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Adventures"
-        component={TabTwoNavigator}
+        component={AdventuresNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="apps-sharp" color={color} />,
         }}
@@ -51,7 +51,7 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const HomeStack = createStackNavigator<HomeParamList>();
 
-function TabOneNavigator() {
+function HomeNavigator() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
@@ -66,7 +66,7 @@ function TabOneNavigator() {
 
 const AdventuresStack = createStackNavigator<AdventuresParamList>();
 
-function TabTwoNavigator() {
+function AdventuresNavigator() {
   return (
     <AdventuresStack.Navigator>
       <AdventuresStack.Screen
