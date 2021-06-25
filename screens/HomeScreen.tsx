@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import { Tile } from "react-native-elements";
 import { Text, View } from "../components/Themed";
 
-export default function TabOneScreen() {
+export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Tile
