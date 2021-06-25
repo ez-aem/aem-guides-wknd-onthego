@@ -1,32 +1,49 @@
-import * as React from 'react';
-import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+import * as React from "react";
+import { StyleSheet } from "react-native";
+import { Tile } from "react-native-elements";
+import { Text, View } from "../components/Themed";
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      <Tile
+        imageSrc={require("../assets/images/mountain-bike.png")}
+        title="WKND Adventures"
+        titleStyle={styles.title}
+        featured
+        overlayContainerStyle={styles.overlayContainer}
+      />
+      <Tile
+        imageSrc={require("../assets/images/skiing.png")}
+        title="Featured Experience"
+        titleStyle={styles.title}
+        caption="Guide to perfect skiing powder"
+        captionStyle={styles.caption}
+        featured
+        overlayContainerStyle={styles.overlayContainer}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  overlayContainer: {
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+  },
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    color: "#202020",
+    textTransform: "uppercase",
+    fontWeight: "700",
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+  caption: {
+    color: "#202020",
+    textTransform: "uppercase",
+    fontWeight: "600"
+  }
 });
