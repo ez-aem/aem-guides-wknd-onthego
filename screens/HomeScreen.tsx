@@ -3,15 +3,16 @@ import { StyleSheet } from "react-native";
 import { Tile } from "react-native-elements";
 import { Text, View } from "../components/Themed";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Tile
         imageSrc={require("../assets/images/mountain-bike.png")}
         title="WKND Adventures"
         titleStyle={styles.title}
-        featured
+        onPress={() => navigation.navigate("Adventures")}
         overlayContainerStyle={styles.overlayContainer}
+        featured
       />
       <Tile
         imageSrc={require("../assets/images/skiing.png")}

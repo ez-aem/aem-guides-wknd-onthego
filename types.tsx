@@ -20,3 +20,11 @@ export type HomeParamList = {
 export type AdventuresParamList = {
   AdventuresScreen: undefined;
 };
+
+
+export type AdventureCardType = {
+  id: string | number;
+  title: string;
+  imageSrc: any;
+  description: string;
+}
