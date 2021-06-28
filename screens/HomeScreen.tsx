@@ -22,6 +22,7 @@ export default function HomeScreen({ navigation }) {
         captionStyle={styles.caption}
         featured
         overlayContainerStyle={styles.overlayContainer}
+        onPress={() => navigation.navigate("Article", { id: "2"})}
       />
     </View>
   );

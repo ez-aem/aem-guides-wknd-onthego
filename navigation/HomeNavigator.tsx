@@ -3,14 +3,15 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import { HomeParamList } from "../types";
 import HomeScreen from "../screens/HomeScreen";
+import ArticleScreen from "../screens/ArticleScreen";
 import AppHeader from "../components/Header";
 
-const HomeStack = createStackNavigator<HomeParamList>();
+const Stack = createStackNavigator<HomeParamList>();
 
 export default function HomeNavigator() {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen
+    <Stack.Navigator>
+      <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
         options={{ 
@@ -18,6 +19,11 @@ export default function HomeNavigator() {
           // headerTitle: (props) => <AppHeader {...props} title="" />,
         }}
       />
-    </HomeStack.Navigator>
+      <Stack.Screen
+        name="Article"
+        component={ArticleScreen}
+        options={({ route }) => ({ title: route?.params.props.title })}
+      />
+    </Stack.Navigator>
   );
 }

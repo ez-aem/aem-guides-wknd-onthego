@@ -7,6 +7,7 @@ import { BottomTabParamList } from "../types";
 import HomeNavigator from "./HomeNavigator";
 import AdventuresNavigator from "./AdventuresNavigator";
 import TabBarIcon from "../components/TabBarIcon";
+import ArticleScreen from "../screens/ArticleScreen"
 
 const Tabs = createBottomTabNavigator<BottomTabParamList>();
 

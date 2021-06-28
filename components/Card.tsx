@@ -1,13 +1,14 @@
 import * as React from "react";
-import { ActivityIndicator, StyleSheet, FlatList, ScrollView, Pressable, Image } from "react-native";
+import { StyleSheet, Pressable, Image } from "react-native";
 import { AdventureCardType } from "../types";
 
 import { Text, View } from "../components/Themed";
 
-export default function Card({ title, imageSrc, description, navigation }: AdventureCardType) {
+export default function Card(props: AdventureCardType) {
+  const { id, title, imageSrc, description, navigation } = props;
   console.log('navigation', navigation)
   return (
-    <Pressable style={styles.card} onPress={() => alert('test')}>
+    <Pressable style={styles.card} onPress={() => navigation.navigate("Article", { props: props })}>
       <Image source={imageSrc} style={styles.cardImage} />
       <Text style={styles.cardTitle}>{title}</Text>
       <Text style={styles.cardDescription}>{description}</Text>

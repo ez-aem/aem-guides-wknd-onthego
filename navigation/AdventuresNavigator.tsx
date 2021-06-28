@@ -4,13 +4,14 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { AdventuresParamList } from "../types";
 import AdventuresScreen from "../screens/AdventuresScreen";
 import AppHeader from "../components/Header";
+import ArticleScreen from "../screens/ArticleScreen";
 
-const AdventuresStack = createStackNavigator<AdventuresParamList>();
+const Stack = createStackNavigator<AdventuresParamList>();
 
 export default function HomeNavigator() {
   return (
-    <AdventuresStack.Navigator>
-      <AdventuresStack.Screen
+    <Stack.Navigator>
+      <Stack.Screen
         name="AdventuresScreen"
         component={AdventuresScreen}
         options={{
@@ -18,6 +19,11 @@ export default function HomeNavigator() {
           // headerTitle: (props) => <AppHeader {...props} title="WKND Adventures" />,
         }}
       />
-    </AdventuresStack.Navigator>
+      <Stack.Screen
+        name="Article"
+        component={ArticleScreen}
+        options={({ route }) => ({ title: route?.params.props.title })}
+      />
+    </Stack.Navigator>
   );
 }

@@ -11,16 +11,18 @@ export type RootStackParamList = {
 export type BottomTabParamList = {
   Home: undefined;
   Adventures: undefined;
+  Article: undefined;
 };
 
 export type HomeParamList = {
   HomeScreen: undefined;
+  Article: undefined;
 };
 
 export type AdventuresParamList = {
   AdventuresScreen: undefined;
+  Article: undefined;
 };
-
 
 export type AdventureCardType = {
   id: string | number;
