@@ -1,10 +1,8 @@
 import * as React from "react";
-import { StyleSheet, FlatList, ScrollView } from "react-native";
-import { Card, Image } from "react-native-elements";
-import { AdventureCardType } from "../types";
+import { StyleSheet, ScrollView } from "react-native";
 
-import { Text, View } from "../components/Themed";
-import { ListItem } from "react-native-elements/dist/list/ListItem";
+import { View } from "../components/Themed";
+import Card from "../components/Card";
 
 const cardList = [
   {
@@ -45,20 +43,11 @@ const cardList = [
   },
 ]
 
-const AdventureCard = ({ title, imageSrc, description }: AdventureCardType) => (
-  <Card containerStyle={styles.card}>
-    <Card.Image style={styles.cardImage} source={imageSrc} />
-    <Text style={styles.cardTitle}>{title}</Text>
-    <Text style={styles.cardDescription}>{description}</Text>
-  </Card>
-)
-
-export default function AdventuresScreen() {
-
+export default function AdventuresScreen({ navigation }: { navigation: Function }) {
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.cardList}>
-        {cardList && cardList.map((card,index) => <AdventureCard {...card} key={index} />)}
+        {cardList && cardList.map((card,index) => <Card {...card} key={index} navigation={navigation} />)}
       </ScrollView>
     </View>
   );
@@ -69,7 +58,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "flex-start",
     justifyContent: "flex-start",
-    backgroundColor: "transparent",
   },
   title: {
     fontSize: 20,
@@ -81,24 +69,4 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
   },
-  card: {
-    backgroundColor: "transparent",
-    borderWidth: 0,
-    margin: 0,
-    padding: 10,
-    flexBasis: "50%",
-    textAlign: "left",
-  },
-  cardTitle: {
-    fontWeight: "bold",
-    textTransform: "uppercase",
-    textAlign: "left",
-    marginVertical: 10,
-  },
-  cardDescription: {
-  },
-  cardImage: {
-    width: "100%",
-    height: 100,
-  }
 });

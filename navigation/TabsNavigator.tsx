@@ -22,7 +22,6 @@ export default function TabsNavigator() {
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
         }}
-        
       />
       <Tabs.Screen 
         name="Adventures" 

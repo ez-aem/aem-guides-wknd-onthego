@@ -3,7 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import { AdventuresParamList } from "../types";
 import AdventuresScreen from "../screens/AdventuresScreen";
-import Header from "../components/Header";
+import AppHeader from "../components/Header";
 
 const AdventuresStack = createStackNavigator<AdventuresParamList>();
 
@@ -13,7 +13,10 @@ export default function HomeNavigator() {
       <AdventuresStack.Screen
         name="AdventuresScreen"
         component={AdventuresScreen}
-        options={{ headerTitle: (props) => <Header {...props} /> }}
+        options={{
+          title:"WKND Adventures",
+          // headerTitle: (props) => <AppHeader {...props} title="WKND Adventures" />,
+        }}
       />
     </AdventuresStack.Navigator>
   );

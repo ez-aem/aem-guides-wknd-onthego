@@ -27,4 +27,5 @@ export type AdventureCardType = {
   title: string;
   imageSrc: any;
   description: string;
+  navigation: Function;
 }
