@@ -14,6 +14,8 @@ import HomeScreen from "../screens/HomeScreen";
 import AdventuresScreen from "../screens/AdventuresScreen";
 import { BottomTabParamList, HomeParamList, AdventuresParamList } from "../types";
 import AdventuresHeader from "../components/AdventuresHeader";
+import Header from "../components/Header";
+
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -59,8 +61,7 @@ function HomeNavigator() {
       <HomeStack.Screen
         name="HomeScreen"
         component={HomeScreen}
-        options={{ headerTitle: "Home" }}
-        // headerShown={false}
+        options={{ headerTitle: (props) => <Header {...props} /> }}
       />
     </HomeStack.Navigator>
   );
@@ -74,9 +75,7 @@ function AdventuresNavigator() {
       <AdventuresStack.Screen
         name="AdventuresScreen"
         component={AdventuresScreen}
-        options={{ headerTitle: "WKND Adventures" }}
-        // options={{ headerTitle: (props) => <AdventuresHeader {...props} /> }}
-        // headerShown={false}
+        options={{ headerTitle: (props) => <Header {...props} /> }}
       />
     </AdventuresStack.Navigator>
   );
