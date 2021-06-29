@@ -9,8 +9,6 @@ import useColorScheme from "../hooks/useColorScheme";
 
 var width = Dimensions.get('window').width;
 
-
-
 export default function AppHeader({ title }: { title: string }) {
   const colorScheme = useColorScheme();
   const styles = StyleSheet.create({
