@@ -9,7 +9,7 @@ export default function HomeScreen({ navigation }) {
       <Tile
         imageSrc={require("../assets/images/mountain-bike.png")}
         title="WKND Adventures"
-        titleStyle={styles.title}
+        // titleStyle={styles.title}
         onPress={() => navigation.navigate("Adventures")}
         overlayContainerStyle={styles.overlayContainer}
         featured
@@ -17,7 +17,7 @@ export default function HomeScreen({ navigation }) {
       <Tile
         imageSrc={require("../assets/images/skiing.png")}
         title="Featured Experience"
-        titleStyle={styles.title}
+        // titleStyle={styles.title}
         caption="Guide to perfect skiing powder"
         captionStyle={styles.caption}
         featured
