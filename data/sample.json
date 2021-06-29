@@ -1,0 +1,54 @@
+{
+  "home": {
+    "adventures": {
+      "title": "WKND Adventures",
+      "imageSrc": "../assets/images/skiing.png"
+    },
+    "featuredArticle": {
+      "id": "2",
+      "title": "Ski the Alps",
+      "imageSrc": "../assets/images/skiing.png",
+      "description": "The Alps are the ideal location for a first ski trip. It is a safe place to travel and the locals are quite friendly and happy to see other skiiers.",
+      "featured": true
+    }
+  },
+  "articles": [
+    {
+      "id": "1",
+      "title": "Surf camps in Costa Rica",
+      "imageSrc": "../assets/images/beach-surfer.png",
+      "description": "Costa Rica is the ideal location for a first surf trip. It is a safe place to travel and the locals are quite friendly and happy to see other surfers."
+    },
+    {
+      "id": "2",
+      "title": "Ski the Alps",
+      "imageSrc": "../assets/images/skiing.png",
+      "description": "The Alps are the ideal location for a first ski trip. It is a safe place to travel and the locals are quite friendly and happy to see other skiiers.",
+      "featured": true
+    },
+    {
+      "id": "3",
+      "title": "Oktoberfest!",
+      "imageSrc": "../assets/images/mountain-bike.png",
+      "description": "Visit Germany to get your fill of beer, sausage and revel in the festivities of Oktoberfest."
+    },
+    {
+      "id": "4",
+      "title": "Colorado Rock Climbing",
+      "imageSrc": "../assets/images/rock-climbing.png",
+      "description": "Colorado is the ideal location to learn rock climbing. Endless adventures in beautiful scenery."
+    },
+    {
+      "id": "5",
+      "title": "Adventure Mountain Biking",
+      "imageSrc": "../assets/images/surfing.png",
+      "description": "Come join enthusiastic mountain bikers in the beautiful hills of Northern California."
+    },
+    {
+      "id": "6",
+      "title": "Wine Tour in Italy",
+      "imageSrc": "../assets/images/vineyard.png",
+      "description": "If you want the best wine tasting in an idilac setting, Italy is the place to be."
+    }
+  ]
+}
