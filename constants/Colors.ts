@@ -1,19 +1,12 @@
-const tintColorLight = '#FFEB00';
-const tintColorDark = '#FFEB00';
-
 export default {
-  light: {
-    text: '#202020',
-    background: '#fff',
-    tint: tintColorLight,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorLight,
+  dark: true,
+  colors: {
+    primary: "#FFEB00",
+    background: "#202020",
+    card: "rgb(255, 255, 255)",
+    text:  "#fff",
+    invertedText: "#000",
+    border: "rgb(199, 199, 204)",
+    notification: "rgb(255, 69, 58)",
   },
-  dark: {
-    text: '#fff',
-    background: '#202020',
-    tint: tintColorDark,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorDark,
-  },
-};
+}

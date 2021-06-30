@@ -2,7 +2,7 @@ import * as React from "react";
 import { StyleSheet, Pressable, Image } from "react-native";
 import { AdventureCardType } from "../types";
 
-import { Text, View } from "../components/Themed";
+import { Text } from "../components/Themed";
 
 export default function Card(props: AdventureCardType) {
   const { id, title, imageSrc, description, navigation } = props;

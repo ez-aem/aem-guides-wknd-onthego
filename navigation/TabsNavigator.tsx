@@ -1,22 +1,27 @@
 import * as React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Colors from "../constants/Colors";
-import useColorScheme from "../hooks/useColorScheme";
+import Theme from "../constants/Colors";
 import { BottomTabParamList } from "../types";
 import HomeNavigator from "./HomeNavigator";
 import AdventuresNavigator from "./AdventuresNavigator";
 import TabBarIcon from "../components/TabBarIcon";
-import ArticleScreen from "../screens/ArticleScreen"
 
 const Tabs = createBottomTabNavigator<BottomTabParamList>();
 
 export default function TabsNavigator() {
-  const colorScheme = useColorScheme();
-  
   return (
-    <Tabs.Navigator 
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+    <Tabs.Navigator
+      tabBarOptions={{ 
+        activeTintColor: Theme.colors.primary,
+        inactiveTintColor: Theme.colors.text,
+        activeBackgroundColor: Theme.colors.background,
+        inactiveBackgroundColor: Theme.colors.background,
+        style: {
+          backgroundColor: Theme.colors.background,
+          padding: 5,
+        },
+      }}>
       <Tabs.Screen 
         name="Home" 
         component={HomeNavigator} 
