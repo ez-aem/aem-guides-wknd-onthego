@@ -15,10 +15,7 @@ export default function Navigator() {
       <Stack.Screen
         name="AdventuresScreen"
         component={AdventuresScreen}
-        options={{
-          title:"WKND Adventures",
-          // headerTitle: (props) => <AppHeader {...props} title="WKND Adventures" />,
-        }}
+        options={{ title:"WKND Adventures", }}
       />
       <Stack.Screen
         name="Article"

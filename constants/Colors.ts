@@ -6,7 +6,7 @@ export default {
     card: "rgb(255, 255, 255)",
     text:  "#fff",
     invertedText: "#000",
-    border: "rgb(199, 199, 204)",
+    border: "#202020",
     notification: "rgb(255, 69, 58)",
   },
 }

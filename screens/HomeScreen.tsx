@@ -5,26 +5,6 @@ import { View } from "../components/Themed";
 import FeaturedTile from "../components/FeaturedTile";
 import RawData from "../data/home";
 
-/* <Tile
-  imageSrc={require("../assets/images/mountain-bike.png")}
-  title="WKND Adventures"
-  // titleStyle={styles.title}
-  onPress={() => navigation.navigate("Adventures")}
-  overlayContainerStyle={styles.overlayContainer}
-  featured
-/>
-<Tile
-  imageSrc={require("../assets/images/skiing.png")}
-  title="Featured Experience"
-  // titleStyle={styles.title}
-  caption="Guide to perfect skiing powder"
-  captionStyle={styles.caption}
-  featured
-  overlayContainerStyle={styles.overlayContainer}
-  onPress={() => navigation.navigate("Article", { id: "2"})}
-/> */
-
-
 export default function HomeScreen({ navigation }) {
   const adventures = RawData.data.appByPath.item;
   const featured = RawData.data.adventureList.items[0];

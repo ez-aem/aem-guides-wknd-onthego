@@ -11,14 +11,11 @@ const Stack = createStackNavigator<HomeParamList>();
 
 export default function Navigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: Theme.colors.background, }, headerBackTitle: "" }}>
+    <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: Theme.colors.background, } }}>
       <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
-        options={{ 
-          title:"",
-          // headerTitle: (props) => <AppHeader {...props} title="" />,
-        }}
+        options={{ title:"", }}
       />
       <Stack.Screen
         name="Article"
