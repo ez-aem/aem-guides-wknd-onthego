@@ -9,7 +9,7 @@ export default function Card(props: AdventureCardType) {
   console.log('navigation', navigation)
   return (
     <Pressable style={styles.card} onPress={() => navigation.navigate("Article", { props: props })}>
-      <Image source={imageSrc} style={styles.cardImage} />
+      <Image source={{ uri: imageSrc }} style={styles.cardImage} />
       <Text style={styles.cardTitle}>{title}</Text>
       <Text style={styles.cardDescription}>{description}</Text>
     </Pressable>

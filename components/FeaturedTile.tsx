@@ -18,8 +18,8 @@ export default function FeaturedTile({
 
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => navigation()}>
-        <ImageBackground source={imagePath} style={styles.image}>
+      <Pressable onPress={() => navigation()} style={{ flex: 1 }}>
+        <ImageBackground source={{ uri: imagePath }} style={styles.image}>
           <Text style={styles.title}>{title}</Text>
           {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
         </ImageBackground>

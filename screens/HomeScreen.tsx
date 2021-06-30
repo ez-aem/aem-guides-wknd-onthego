@@ -31,5 +31,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    flexDirection: "column",
+    display: "flex",
   },
 });

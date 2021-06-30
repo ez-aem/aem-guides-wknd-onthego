@@ -11,7 +11,7 @@ export default function Article(props: AdventureCardType) {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.scrollContainer}>
-        <Image style={styles.image} source={imageSrc} />
+        <Image style={styles.image} source={{ uri: imageSrc }} />
         <View style={styles.content}>
           <Text>{description}</Text>
         </View>
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     maxWidth: "100%",
     resizeMode: "cover",
     maxHeight: 200,
+    height: 200,
   },
   content: {
     padding: 25,
