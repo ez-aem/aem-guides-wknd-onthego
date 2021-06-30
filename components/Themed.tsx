@@ -13,10 +13,10 @@ export type ViewProps = DefaultView['props'];
 
 export function Text(props: TextProps) {
   const { style, ...otherProps } = props;
-  return <DefaultText style={{ color: Theme.colors.text }} {...otherProps} />;
+  return <DefaultText style={{ color: Theme.colors.text, ...style }} {...otherProps} />;
 }
 
 export function View(props: ViewProps) {
   const { style, ...otherProps } = props;
-  return <DefaultView style={{ backgroundColor: Theme.colors.background, }} {...otherProps} />;
+  return <DefaultView style={{ backgroundColor: Theme.colors.background, ...style }} {...otherProps} />;
 }

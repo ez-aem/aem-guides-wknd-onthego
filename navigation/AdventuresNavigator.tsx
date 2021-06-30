@@ -5,12 +5,13 @@ import { AdventuresParamList } from "../types";
 import AdventuresScreen from "../screens/AdventuresScreen";
 import AppHeader from "../components/Header";
 import ArticleScreen from "../screens/ArticleScreen";
+import Theme from "../constants/Colors";
 
 const Stack = createStackNavigator<AdventuresParamList>();
 
-export default function HomeNavigator() {
+export default function Navigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: Theme.colors.background, }}}>
       <Stack.Screen
         name="AdventuresScreen"
         component={AdventuresScreen}
