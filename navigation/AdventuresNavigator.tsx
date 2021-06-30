@@ -11,7 +11,7 @@ const Stack = createStackNavigator<AdventuresParamList>();
 
 export default function Navigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: Theme.colors.background, }}}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
         name="AdventuresScreen"
         component={AdventuresScreen}

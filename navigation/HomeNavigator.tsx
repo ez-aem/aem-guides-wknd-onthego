@@ -4,14 +4,12 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { HomeParamList } from "../types";
 import HomeScreen from "../screens/HomeScreen";
 import ArticleScreen from "../screens/ArticleScreen";
-import AppHeader from "../components/Header";
-import Theme from "../constants/Colors";
 
 const Stack = createStackNavigator<HomeParamList>();
 
 export default function Navigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: Theme.colors.background, } }}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}

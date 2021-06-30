@@ -18,7 +18,7 @@ export default function Card(props: AdventureCardType) {
 
 const styles = StyleSheet.create({
   card: {
-    padding: 10,
+    padding: 15,
     flexBasis: "50%",
   },
   cardTitle: {

@@ -1,8 +1,9 @@
 import * as React from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import { Dimensions, SafeAreaView, StyleSheet, ScrollView, ImageBackground } from "react-native";
 
-import { View } from "../components/Themed";
+import { Text, View } from "../components/Themed";
 import Card from "../components/Card";
+import Theme from "../constants/Colors";
 
 const cardList = [
   {
@@ -57,28 +58,52 @@ const cardList = [
 
 export default function AdventuresScreen({ navigation }: { navigation: Function }) {
   return (
-    <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.cardList}>
-        {cardList && cardList.map((card,index) => <Card {...card} key={index} navigation={navigation} />)}
-      </ScrollView>
-    </View>
+    <SafeAreaView style={styles.safeContainer}>
+      <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.cardList}>
+          <ImageBackground source={{ uri: "https://wknd.site/us/en/_jcr_content/root/container/carousel/item_1571954853062.coreimg.60.1600.jpeg/1622075943352/adobestock-216674449.jpeg" }} style={styles.image}>
+            <Text style={styles.title}>WKND Adventures</Text>
+          </ImageBackground>
+          <Text style={styles.subtitle}>Our Adventures</Text>
+          {cardList && cardList.map((card,index) => <Card {...card} key={index} navigation={navigation} />)}
+        </ScrollView>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeContainer: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     alignItems: "flex-start",
     justifyContent: "flex-start",
   },
+  image: {
+    padding: 15,
+    height: 100,
+    width: Dimensions.get('window').width,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+  },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: "bold",
     textTransform: "uppercase",
-    padding: 20,
+    color: Theme.colors.background,
   },
   cardList: {
     flexDirection: "row",
     flexWrap: "wrap",
   },
+  subtitle: {
+    fontSize: 30,
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    color: Theme.colors.text,
+    padding: 15,
+    paddingBottom: 0,
+  }
 });
