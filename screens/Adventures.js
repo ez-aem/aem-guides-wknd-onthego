@@ -1,10 +1,38 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View } from "react-native";
-import { Card, Text, Title, Paragraph } from 'react-native-paper';
+import { Text, } from 'react-native-paper';
+import Data from "../data/adventures.json";
 
 import FeaturedTile from "../components/FeaturedTile";
+import Card from "../components/Card";
 
 export default function AdventuresRoute() {
+  const styles = StyleSheet.create({
+    safeContainer: {
+      flex: 1,
+    },
+    container: {
+      flex: 1,
+      flexDirection: "column",
+      display: "flex",
+    },
+    title: {
+      fontSize: 20,
+      fontWeight: "bold",
+      textTransform: "uppercase",
+      padding: 15,
+      paddingBottom: 0,
+    },
+    cardList: {
+      flex: 1,
+      flexDirection: "row",
+      flexWrap: "wrap",
+    },
+  });
+
+  const [adventuresList, setAdventuresList] = useState([]);
+  useEffect(() => setAdventuresList(Data), []);
+
   return (
     <SafeAreaView style={styles.safeContainer}>
       <ScrollView style={{ flex: 1 }}>
@@ -15,29 +43,14 @@ export default function AdventuresRoute() {
             navigation={() => alert("test")}
             height={100}
           />
-          <Text>Our Adventures</Text>
-          {[700, 702, 703, 704, 705, 706].map(number => (
-            <Card>
-              <Card.Cover source={{ uri: `https://picsum.photos/${number}` }} />
-              <Card.Content>
-                <Title>Card title</Title>
-                <Paragraph>Card content</Paragraph>
-              </Card.Content>
-            </Card>
-          ))}
+          <Text style={styles.title}>Our Adventures</Text>
+          {adventuresList && (
+            <View style={styles.cardList}>
+              {adventuresList.map(item => <Card {...item} key={item.id} />)}
+            </View>
+          )}
         </View>
       </ScrollView>
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({
-  safeContainer: {
-    flex: 1,
-  },
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    display: "flex",
-  },
-});
