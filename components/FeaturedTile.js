@@ -20,12 +20,11 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height / 2.25,
+    height: Dimensions.get('window').height / 2,
     margin: 0,
   },
   pressable: {
     flex: 1,
-    height: Dimensions.get('window').height / 2.25,
   },
   image: {
     padding: 10,
@@ -35,7 +34,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     resizeMode: "cover",
-    height: Dimensions.get('window').height / 2.25,
+    height: Dimensions.get('window').height / 2,
   },
   title: {
     color: "#202020",
