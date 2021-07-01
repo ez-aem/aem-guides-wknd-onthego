@@ -1,13 +1,12 @@
-// import color from 'color';
-// import { black, white, pinkA400 } from './colors';
-// import configureFonts from './fonts';
+import { DefaultTheme } from 'react-native-paper';
 
-export default DefaultTheme = {
+const Theme = {
+  ...DefaultTheme,
   dark: false,
-  roundness: 4,
+  roundness: 0,
   colors: {
-    primary: "#FFEB00",
-    accent: '#03dac4',
+    primary: "#202020",
+    accent: "#FFEB00",
     background: "#202020",
     surface: "#202020",
     error: '#B00020',
@@ -24,3 +23,4 @@ export default DefaultTheme = {
   },
 };
 
+export default Theme;

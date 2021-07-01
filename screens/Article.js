@@ -1,6 +1,26 @@
 import * as React from 'react';
+import { SafeAreaView, StyleSheet, View } from "react-native";
 import { Text } from 'react-native-paper';
 
-const ArticleRoute = () => <Text>Article</Text>;
+export default function ArticleRoute() {
+  return (
+    <SafeAreaView style={styles.safeContainer}>
+      <View style={styles.container}>
+        <Text>Article</Text>
+      </View>
+    </SafeAreaView>
+  )
+}
 
-export default ArticleRoute;
+const styles = StyleSheet.create({
+  safeContainer: {
+    flex: 1,
+  },
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    display: "flex",
+  },
+});
