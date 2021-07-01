@@ -2,7 +2,8 @@ import * as React from "react";
 import { Dimensions, ImageBackground, Pressable, StyleSheet, View, Text } from "react-native";
 
 export default function FeaturedTile(props) {
-  const { subtitle, title, imagePath, navigation } = props;
+  const { subtitle, title, imagePath, } = props;
+  const navigation = props.navigation || null;
 
   const styles = StyleSheet.create({
     pressable: {
