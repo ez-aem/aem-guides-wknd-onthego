@@ -5,7 +5,7 @@ export default function FeaturedTile(props) {
   const { subtitle, title, imagePath, navigation } = props;
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => navigation()} style={styles.pressable}>
+      <Pressable onPress={navigation} style={styles.pressable}>
         <ImageBackground source={{ uri: imagePath }} style={styles.image}>
           <Text style={styles.title}>{title}</Text>
           {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}

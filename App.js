@@ -26,6 +26,7 @@ export default function Main() {
         onIndexChange={setIndex}
         renderScene={renderScene}
         activeColor={Theme.colors.accent}
+        sceneAnimationEnabled={true}
       />
     </PaperProvider>
   );
