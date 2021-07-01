@@ -12,8 +12,8 @@ const MyComponent = () => {
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    music: HomeRoute,
-    albums: AdventuresRoute,
+    home: HomeRoute,
+    adventures: AdventuresRoute,
   });
 
   return (
