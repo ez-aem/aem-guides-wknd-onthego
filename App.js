@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { BottomNavigation, Text } from 'react-native-paper';
+import { BottomNavigation, Provider as PaperProvider } from 'react-native-paper';
 
+import Theme from './Theme';
 import HomeRoute from './screens/Home';
 import AdventuresRoute from './screens/Adventures';
+import ArticleRoute from './screens/Article';
 
-const MyComponent = () => {
+export default function Main() {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     { key: 'home', title: 'Home', icon: 'home' },
@@ -14,15 +16,16 @@ const MyComponent = () => {
   const renderScene = BottomNavigation.SceneMap({
     home: HomeRoute,
     adventures: AdventuresRoute,
+    article: ArticleRoute,
   });
 
   return (
-    <BottomNavigation
-      navigationState={{ index, routes }}
-      onIndexChange={setIndex}
-      renderScene={renderScene}
-    />
+    <PaperProvider theme={Theme}>
+      <BottomNavigation
+        navigationState={{ index, routes }}
+        onIndexChange={setIndex}
+        renderScene={renderScene}
+      />
+    </PaperProvider>
   );
 };
-
-export default MyComponent;
