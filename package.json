@@ -1,13 +1,22 @@
 {
-  "name": "wknd-mobile-pwa",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/ez-aem/aem-guides-wknd-onthego.git",
-  "author": "Josh Zeltman <joshua.zeltman@gmail.com>",
-  "license": "MIT",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-native": "^0.64.2",
-    "react-native-paper": "^4.9.2"
-  }
+    "expo": "~41.0.1",
+    "expo-status-bar": "~1.0.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
+    "react-native-web": "~0.13.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0"
+  },
+  "private": true
 }
