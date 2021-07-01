@@ -5,7 +5,7 @@ export default function FeaturedTile(props) {
   const { subtitle, title, imagePath, navigation } = props;
 
   const styles = StyleSheet.create({
-    container: {
+    pressable: {
       flex: props.height ? "auto" : 1,
       flexDirection: "column",
       width: Dimensions.get('window').width,
