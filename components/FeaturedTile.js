@@ -3,48 +3,45 @@ import { Dimensions, ImageBackground, Pressable, StyleSheet, View, Text } from "
 
 export default function FeaturedTile(props) {
   const { subtitle, title, imagePath, navigation } = props;
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: props.height ? "auto" : 1,
+      flexDirection: "column",
+      width: Dimensions.get('window').width,
+      height: props.height ? props.height : "auto",
+      margin: 0,
+    },
+    image: {
+      flex: 1,
+      padding: 10,
+      position: "absolute",
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      height: props.height ? props.height : "auto",
+    },
+    title: {
+      color: "#202020",
+      textTransform: "uppercase",
+      fontWeight: "700",
+      fontSize: 25,
+    },
+    subtitle: {
+      color: "#202020",
+      textTransform: "uppercase",
+      fontWeight: "600"
+    }
+  });
+
   return (
-    <View style={styles.container}>
-      <Pressable onPress={navigation} style={styles.pressable}>
-        <ImageBackground source={{ uri: imagePath }} style={styles.image}>
-          <Text style={styles.title}>{title}</Text>
-          {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
-        </ImageBackground>
-      </Pressable>
-    </View>
+    <Pressable onPress={navigation} style={styles.pressable}>
+      <ImageBackground resizeMode="cover" source={{ uri: imagePath }} style={styles.image}>
+        <Text style={styles.title}>{title}</Text>
+        {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
+      </ImageBackground>
+    </Pressable>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height / 2,
-    margin: 0,
-  },
-  pressable: {
-    flex: 1,
-  },
-  image: {
-    padding: 10,
-    position: "absolute",
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    resizeMode: "cover",
-    height: Dimensions.get('window').height / 2,
-  },
-  title: {
-    color: "#202020",
-    textTransform: "uppercase",
-    fontWeight: "700",
-    fontSize: 25,
-  },
-  subtitle: {
-    color: "#202020",
-    textTransform: "uppercase",
-    fontWeight: "600"
-  }
-});
