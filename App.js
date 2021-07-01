@@ -25,6 +25,7 @@ export default function Main() {
         navigationState={{ index, routes }}
         onIndexChange={setIndex}
         renderScene={renderScene}
+        activeColor={Theme.colors.accent}
       />
     </PaperProvider>
   );
