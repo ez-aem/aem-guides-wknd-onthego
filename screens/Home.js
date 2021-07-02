@@ -1,24 +1,35 @@
-import * as React from 'react';
-import { SafeAreaView, StyleSheet, View } from "react-native";
+import * as React from "react";
+import { SafeAreaView, StyleSheet, ScrollView, View } from "react-native";
 
-import FeaturedTile from '../components/FeaturedTile';
+import FeaturedTile from "../components/FeaturedTile";
+import Data from "../data/home.json";
 
 export default function HomeScreen({ navigation }) {
+  const [adventureData, setAdventureData] = React.useState(false);
+  const [featuredAdventuresData, setFeaturedAdventuresData] = React.useState([]);
+  React.useEffect(() => {
+    setAdventureData(Data?.data?.appByPath?.item);
+    setFeaturedAdventuresData(Data?.data?.adventureList?.items);
+  });
+
   return (
     <SafeAreaView style={styles.safeContainer}>
-      <View style={styles.container}>
-        <FeaturedTile
-          title="WKND Adventures"
-          imagePath="https://wknd.site/us/en/_jcr_content/root/container/carousel/item_1571954853062.coreimg.60.1600.jpeg/1622075943352/adobestock-216674449.jpeg"
+      <ScrollView contentContainerStyle={styles.container}>
+        {adventureData && <FeaturedTile
+          title={adventureData?.appTitle}
+          imagePath={adventureData?.appHeroImage?._path}
           navigation={() => navigation.navigate("Adventures")}
-        />
-        <FeaturedTile
-          title="Featured Adventure"
-          subtitle="Downhill Skiing in Jackson Hole, Wyoming"
-          imagePath="https://wknd.site/us/en/_jcr_content/root/container/carousel/teaser.coreimg.60.1600.jpeg/1622075943382/adobestock-185234795.jpeg"
-          navigation={() => navigation.navigate("Article", { title: "from home screen" })}
-        />
-      </View>
+        />}
+        {featuredAdventuresData.length > 0 && featuredAdventuresData.map((item, index) => (
+          <FeaturedTile
+            key={index}
+            title="Featured Adventure"
+            subtitle={item?.adventureTitle}
+            imagePath={item?.adventurePrimaryImage?._path}
+            navigation={() => navigation.navigate("Article", { ...item })}
+          />
+        ))}
+      </ScrollView>
     </SafeAreaView>
   )
 }
