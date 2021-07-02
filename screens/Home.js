@@ -4,7 +4,7 @@ import { Text } from 'react-native-paper';
 
 import FeaturedTile from '../components/FeaturedTile';
 
-export default function HomeRoute() {
+export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.safeContainer}>
       <View style={styles.container}>

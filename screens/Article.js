@@ -2,7 +2,7 @@ import * as React from 'react';
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { Text } from 'react-native-paper';
 
-export default function ArticleRoute() {
+export default function ArticleScreen() {
   return (
     <SafeAreaView style={styles.safeContainer}>
       <View style={styles.container}>

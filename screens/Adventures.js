@@ -6,7 +6,7 @@ import Data from "../data/adventures.json";
 import FeaturedTile from "../components/FeaturedTile";
 import Card from "../components/Card";
 
-export default function AdventuresRoute() {
+export default function AdventuresScreen() {
   const styles = StyleSheet.create({
     safeContainer: {
       flex: 1,
