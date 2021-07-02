@@ -1,5 +1,5 @@
 import * as React from "react";
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
 import Icon from "../components/Icon";
 import HomeNavigator from "./HomeNavigator";
@@ -25,7 +25,7 @@ export default function TabNavigator() {
         name="Home"
         component={HomeNavigator}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: "Profile",
           tabBarIcon: ({ color }) => <Icon name="home" color={color} size={26} />,
         }}
       />
@@ -33,7 +33,7 @@ export default function TabNavigator() {
         name="Adventures"
         component={AdventuresNavigator}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: "Profile",
           tabBarIcon: ({ color }) => <Icon name="apps-sharp" color={color} size={26} />,
         }}
       />
