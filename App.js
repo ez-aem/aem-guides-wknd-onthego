@@ -8,7 +8,7 @@ import TabNavigator from "./navigation/TabNavigator";
 export default function Main() {
   return (
     <PaperProvider theme={Theme}>
-      <NavigationContainer>
+      <NavigationContainer theme={Theme}>
         <TabNavigator />
       </NavigationContainer>
     </PaperProvider>

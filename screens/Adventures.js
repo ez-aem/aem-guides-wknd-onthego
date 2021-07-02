@@ -6,7 +6,7 @@ import Data from "../data/adventures.json";
 import FeaturedTile from "../components/FeaturedTile";
 import Card from "../components/Card";
 
-export default function AdventuresScreen() {
+export default function AdventuresScreen({ navigation }) {
   const styles = StyleSheet.create({
     safeContainer: {
       flex: 1,
@@ -45,7 +45,7 @@ export default function AdventuresScreen() {
           <Text style={styles.title}>Our Adventures</Text>
           {adventuresList && (
             <View style={styles.cardList}>
-              {adventuresList.map(item => <Card {...item} key={item.id} />)}
+              {adventuresList.map(item => <Card {...item} key={item.id} navigation={navigation} />)}
             </View>
           )}
         </View>

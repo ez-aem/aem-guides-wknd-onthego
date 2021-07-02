@@ -7,7 +7,7 @@ export default function FeaturedTile(props) {
 
   const styles = StyleSheet.create({
     pressable: {
-      flex: props.height ? "auto" : 1,
+      flex: 1,
       flexDirection: "column",
       width: Dimensions.get('window').width,
       height: props.height ? props.height : "auto",
@@ -35,6 +35,10 @@ export default function FeaturedTile(props) {
       fontWeight: "600"
     }
   });
+
+  console.log('styles', styles.pressable)
+
+  if (props.height) delete styles.pressable.flex;
 
   return (
     <Pressable onPress={navigation} style={styles.pressable}>

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
+import Theme from "../Theme";
 import Icon from "../components/Icon";
 import HomeNavigator from "./HomeNavigator";
 import AdventuresNavigator from "./AdventuresNavigator";
@@ -11,30 +12,24 @@ export default function TabNavigator() {
 
   return (
     <Tab.Navigator
-      tabBarOptions={{
-        activeTintColor: Theme.colors.primary,
-        inactiveTintColor: Theme.colors.text,
-        activeBackgroundColor: Theme.colors.background,
-        inactiveBackgroundColor: Theme.colors.background,
-        style: {
-          backgroundColor: Theme.colors.background,
-          padding: 5,
-        },
-      }}>
+      initialRouteName="Home"
+      activeColor={Theme.colors.accent}
+      inactiveColor={Theme.colors.text}
+      barStyle={{ backgroundColor: Theme.colors.background }}>
       <Tab.Screen
         name="Home"
         component={HomeNavigator}
         options={{
-          tabBarLabel: "Profile",
-          tabBarIcon: ({ color }) => <Icon name="home" color={color} size={26} />,
+          tabBarLabel: "Home",
+          tabBarIcon: ({ color }) => <Icon name="home" color={color} />,
         }}
       />
       <Tab.Screen
         name="Adventures"
         component={AdventuresNavigator}
         options={{
-          tabBarLabel: "Profile",
-          tabBarIcon: ({ color }) => <Icon name="apps-sharp" color={color} size={26} />,
+          tabBarLabel: "Adventures",
+          tabBarIcon: ({ color }) => <Icon name="apps-sharp" color={color} />,
         }}
       />
     </Tab.Navigator>
