@@ -36,8 +36,6 @@ export default function FeaturedTile(props) {
     }
   });
 
-  console.log('styles', styles.pressable)
-
   if (props.height) delete styles.pressable.flex;
 
   return (

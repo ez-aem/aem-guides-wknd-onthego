@@ -6,7 +6,7 @@ export default function Card(props) {
   const { id, title, imageSrc, description, navigation } = props;
 
   return (
-    <PaperCard style={styles.card} onPress={() => navigation.navigate("Article", { title: title })}>
+    <PaperCard style={styles.card} onPress={() => navigation.navigate("Article", { ...props })}>
       <PaperCard.Cover source={{ uri: imageSrc }} resizeMode="cover" style={styles.cardImage} />
       <Title style={styles.cardTitle}>{title}</Title>
       <Paragraph style={styles.cardDescription}>{description}</Paragraph>

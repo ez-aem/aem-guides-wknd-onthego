@@ -1,15 +1,22 @@
-import * as React from 'react';
-import { SafeAreaView, StyleSheet, View } from "react-native";
-import { Text } from 'react-native-paper';
+import * as React from "react";
+import { Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 
-export default function ArticleScreen() {
+import Theme from "../Theme"
+
+export default function Article(props) {
+  const { imageSrc, description } = props?.route?.params;
   return (
     <SafeAreaView style={styles.safeContainer}>
       <View style={styles.container}>
-        <Text>Article</Text>
+        <ScrollView style={styles.scrollContainer}>
+          <Image style={styles.image} source={{ uri: imageSrc }} />
+          <View style={styles.content}>
+            <Text style={styles.text}>{description}</Text>
+          </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -18,9 +25,26 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column",
-    display: "flex",
   },
+  scrollContainer: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    position: "relative",
+  },
+  image: {
+    width: "100%",
+    maxWidth: "100%",
+    resizeMode: "cover",
+    height: 200,
+    position: "relative",
+  },
+  content: {
+    paddingHorizontal: 30,
+    paddingVertical: 20,
+  },
+  text: {
+    fontSize: 16,
+    color: Theme.colors.text,
+  }
 });
