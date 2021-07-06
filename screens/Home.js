@@ -32,7 +32,7 @@ export default function HomeScreen({ navigation }) {
             title="Featured Adventure"
             subtitle={item?.adventureTitle}
             imagePath={item?.adventurePrimaryImage?._path}
-            navigation={() => navigation.navigate("Article", { ...item })}
+            navigation={() => navigation.navigate("Article", { adventure: item })}
           />
         ))}
       </ScrollView>

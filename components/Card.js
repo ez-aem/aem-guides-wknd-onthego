@@ -5,14 +5,15 @@ import { Card as PaperCard, Title, Paragraph } from "react-native-paper";
 import { URL } from "../CONSTANTS";
 
 export default function Card(props) {
-  const { _path, navigation } = props;
-  const title = props.adventureTitle;
-  const description = props.adventureDescription?.html;
-  let imagePath = props?.adventurePrimaryImage?._path;
-  if (!imagePath.startsWith(URL)) imagePath = `${URL}${imagePath}`;
+  const { navigation } = props;
+  const adventure = props.adventure;
+  const title = adventure.adventureTitle;
+  const description = adventure.adventureDescription?.html;
+  let imagePath = adventure?.adventurePrimaryImage?._path;
+  if (!imagePath.startsWith("http")) imagePath = `${URL}${imagePath}`;
 
   return (
-    <PaperCard style={styles.card} onPress={() => navigation.navigate("Article", { ...props })}>
+    <PaperCard style={styles.card} onPress={() => navigation.navigate("Article", { adventure })}>
       <PaperCard.Cover source={{ uri: imagePath }} resizeMode="cover" style={styles.cardImage} />
       <Title style={styles.cardTitle}>{title}</Title>
       <Paragraph numberOfLines={3} ellipsizeMode={"tail"} style={styles.cardDescription}>{description}</Paragraph>

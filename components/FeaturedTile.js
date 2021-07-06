@@ -7,7 +7,7 @@ export default function FeaturedTile(props) {
   const { subtitle, title } = props;
   const navigation = props.navigation || null;
   let { imagePath } = props;
-  if (!imagePath.startsWith(URL)) imagePath = `${URL}${imagePath}`;
+  if (!imagePath.startsWith("http")) imagePath = `${URL}${imagePath}`;
 
   const styles = StyleSheet.create({
     pressable: {

@@ -14,6 +14,7 @@ export default async function fetchData(endpoint = false, articlePath = false) {
       break;
     case "article":
       if (articlePath) url = `${ARTICLE_DATA}${articlePath}`;
+      console.log("article", url)
       break;
   }
 

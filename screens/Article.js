@@ -1,18 +1,38 @@
-import * as React from "react";
+import React, { useState, useEffect } from 'react';
 import { Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 
-import Theme from "../CONSTANTS"
+import Theme, { URL } from "../CONSTANTS"
+import fetchData from '../data';
 
 export default function Article(props) {
-  const { imageSrc, description } = props?.route?.params;
+  if (!props?.route?.params?.adventure?._path) return false;
+
+  const { navigation } = props;
+  const [article, setArticle] = useState(false);
+  const [imagePath, setImagePath] = useState(false);
+  const [description, setDescription] = useState(false);
+
+  const getData = async () => {
+    const json = await fetchData("article", props.route.params.adventure._path);
+    const data = json?.data?.adventureByPath?.item || false;
+    if (data) {
+      setArticle(data);
+      navigation.setParams({ title: data?.adventureTitle });
+      setDescription(data.adventureDescription.html);
+      setImagePath(data?.adventurePrimaryImage?._path?.startsWith("http") ? data?.adventurePrimaryImage?._path : `${URL}${data?.adventurePrimaryImage?._path}`);
+    }
+  }
+
+  useEffect(() => { if (!article) getData(); });
+
   return (
     <SafeAreaView style={styles.safeContainer}>
       <View style={styles.container}>
         <ScrollView style={styles.scrollContainer}>
-          <Image style={styles.image} source={{ uri: imageSrc }} />
-          <View style={styles.content}>
+          {imagePath && <Image style={styles.image} source={{ uri: imagePath }} />}
+          {description && <View style={styles.content}>
             <Text style={styles.text}>{description}</Text>
-          </View>
+          </View>}
         </ScrollView>
       </View>
     </SafeAreaView>

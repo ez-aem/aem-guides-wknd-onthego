@@ -33,7 +33,6 @@ export default function AdventuresScreen({ navigation }) {
 
   const getData = async () => {
     const json = await fetchData("adventuresList");
-    console.log('json', json)
     if (json?.data?.adventureList?.items) setAdventuresList(json?.data?.adventureList?.items);
   }
 
@@ -51,7 +50,7 @@ export default function AdventuresScreen({ navigation }) {
           <Text style={styles.title}>Our Adventures</Text>
           {adventuresList && (
             <View style={styles.cardList}>
-              {adventuresList.map((item, index) => <Card {...item} key={index} navigation={navigation} />)}
+              {adventuresList.map((item, index) => <Card adventure={item} key={index} navigation={navigation} />)}
             </View>
           )}
         </View>
