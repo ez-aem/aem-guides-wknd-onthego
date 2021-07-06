@@ -8,28 +8,6 @@ import Card from "../components/Card";
 
 export default function AdventuresScreen({ navigation }) {
   const [adventuresList, setAdventuresList] = useState(false);
-  const styles = StyleSheet.create({
-    safeContainer: {
-      flex: 1,
-    },
-    container: {
-      flex: 1,
-      flexDirection: "column",
-      display: "flex",
-    },
-    title: {
-      fontSize: 20,
-      fontWeight: "bold",
-      textTransform: "uppercase",
-      padding: 15,
-      paddingBottom: 0,
-    },
-    cardList: {
-      flex: 1,
-      flexDirection: "row",
-      flexWrap: "wrap",
-    },
-  });
 
   const getData = async () => {
     const json = await fetchData("adventuresList");
@@ -58,3 +36,26 @@ export default function AdventuresScreen({ navigation }) {
     </SafeAreaView>
   )
 }
+
+const styles = StyleSheet.create({
+  safeContainer: {
+    flex: 1,
+  },
+  container: {
+    flex: 1,
+    flexDirection: "column",
+    display: "flex",
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    padding: 15,
+    paddingBottom: 0,
+  },
+  cardList: {
+    flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+});

@@ -13,7 +13,7 @@ export default function FeaturedTile(props) {
     pressable: {
       flex: 1,
       flexDirection: "column",
-      width: Dimensions.get('window').width,
+      width: Dimensions.get("window").width,
       height: props.height ? props.height : "auto",
       margin: 0,
     },

@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import React, { useState, useEffect } from "react";
+import { Dimensions, Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import HTML from "react-native-render-html";
 
 import Theme, { URL } from "../CONSTANTS"
-import fetchData from '../data';
+import fetchData from "../data";
 
 export default function Article(props) {
   if (!props?.route?.params?.adventure?._path) return false;
 
+  const width = Dimensions.get("window").width;
   const { navigation } = props;
   const [article, setArticle] = useState(false);
   const [imagePath, setImagePath] = useState(false);
@@ -31,7 +33,12 @@ export default function Article(props) {
         <ScrollView style={styles.scrollContainer}>
           {imagePath && <Image style={styles.image} source={{ uri: imagePath }} />}
           {description && <View style={styles.content}>
-            <Text style={styles.text}>{description}</Text>
+            <HTML
+              source={{ html: description }}
+              style={styles.text}
+              baseFontStyle={styles.text}
+              contentWidth={width}
+            />
           </View>}
         </ScrollView>
       </View>

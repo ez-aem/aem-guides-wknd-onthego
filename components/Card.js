@@ -1,8 +1,9 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
 import { Card as PaperCard, Title, Paragraph } from "react-native-paper";
+import HTML from "react-native-render-html";
 
-import { URL } from "../CONSTANTS";
+import Theme, { URL } from "../CONSTANTS";
 
 export default function Card(props) {
   const { navigation } = props;
@@ -16,7 +17,10 @@ export default function Card(props) {
     <PaperCard style={styles.card} onPress={() => navigation.navigate("Article", { adventure })}>
       <PaperCard.Cover source={{ uri: imagePath }} resizeMode="cover" style={styles.cardImage} />
       <Title style={styles.cardTitle}>{title}</Title>
-      <Paragraph numberOfLines={3} ellipsizeMode={"tail"} style={styles.cardDescription}>{description}</Paragraph>
+      <HTML
+        source={{ html: description }}
+        baseFontStyle={styles.cardDescription}
+      />
     </PaperCard>
   )
 }
@@ -38,6 +42,7 @@ const styles = StyleSheet.create({
   cardDescription: {
     padding: 0,
     margin: 0,
+    color: Theme.colors.text,
   },
   cardImage: {
     width: "100%",
