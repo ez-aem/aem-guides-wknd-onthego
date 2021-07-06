@@ -1,25 +1,21 @@
-import * as React from "react";
+import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, ScrollView } from "react-native";
 
-import { HOME_SCREEN_DATA } from "../CONSTANTS";
+import fetchData from '../data';
 import FeaturedTile from "../components/FeaturedTile";
 
 export default function HomeScreen({ navigation }) {
-  const [adventureData, setAdventureData] = React.useState(false);
-  const [featuredAdventuresData, setFeaturedAdventuresData] = React.useState([]);
+  const [adventureData, setAdventureData] = useState(false);
+  const [featuredAdventuresData, setFeaturedAdventuresData] = useState([]);
 
-  const fetchHomeScreenData = async () => {
-    const response = await fetch(HOME_SCREEN_DATA);
-    const json = await response.json();
-    const adventure = json?.data?.appByPath?.item || false;
-    const adventuresList = json?.data?.adventureList?.items || [];
-
-    if (adventure) setAdventureData(adventure);
-    if (adventuresList) setFeaturedAdventuresData(adventuresList);
+  const getData = async () => {
+    const json = await fetchData("home");
+    if (json?.data?.appByPath?.item) setAdventureData(json?.data?.appByPath?.item);
+    if (json?.data?.adventureList?.items) setFeaturedAdventuresData(json?.data?.adventureList?.items);
   }
 
-  React.useEffect(() => {
-    if (!adventureData) fetchHomeScreenData();
+  useEffect(() => {
+    if (!adventureData) getData();
   });
 
   return (
