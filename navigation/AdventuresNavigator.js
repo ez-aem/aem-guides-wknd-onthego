@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import AdventuresScreen from "../screens/Adventures";
 import ArticleScreen from '../screens/Article';
-import Theme from '../Theme';
+import Theme from '../CONSTANTS';
 
 export default function AdventuresNavigator() {
   const Stack = createStackNavigator();

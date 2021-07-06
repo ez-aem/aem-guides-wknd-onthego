@@ -1,15 +1,25 @@
 import * as React from "react";
-import { SafeAreaView, StyleSheet, ScrollView, View } from "react-native";
+import { SafeAreaView, StyleSheet, ScrollView } from "react-native";
 
+import { HOME_SCREEN_DATA } from "../CONSTANTS";
 import FeaturedTile from "../components/FeaturedTile";
-import Data from "../data/home.json";
 
 export default function HomeScreen({ navigation }) {
   const [adventureData, setAdventureData] = React.useState(false);
   const [featuredAdventuresData, setFeaturedAdventuresData] = React.useState([]);
+
+  const fetchHomeScreenData = async () => {
+    const response = await fetch(HOME_SCREEN_DATA);
+    const json = await response.json();
+    const adventure = json?.data?.appByPath?.item || false;
+    const adventuresList = json?.data?.adventureList?.items || [];
+
+    if (adventure) setAdventureData(adventure);
+    if (adventuresList) setFeaturedAdventuresData(adventuresList);
+  }
+
   React.useEffect(() => {
-    setAdventureData(Data?.data?.appByPath?.item);
-    setFeaturedAdventuresData(Data?.data?.adventureList?.items);
+    if (!adventureData) fetchHomeScreenData();
   });
 
   return (

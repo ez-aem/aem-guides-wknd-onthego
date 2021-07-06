@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 
-import Theme from "../Theme"
+import Theme from "../CONSTANTS"
 
 export default function Article(props) {
   const { imageSrc, description } = props?.route?.params;

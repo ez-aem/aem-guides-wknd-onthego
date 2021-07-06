@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from "../screens/Home";
 import ArticleScreen from '../screens/Article';
-import Theme from '../Theme';
+import Theme from '../CONSTANTS';
 
 export default function HomeNavigator() {
   const Stack = createStackNavigator();

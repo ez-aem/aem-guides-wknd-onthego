@@ -1,5 +1,10 @@
 import { DefaultTheme } from 'react-native-paper';
 
+export const URL = "https://publish-p25404-e44534-cmstg.adobeaemcloud.com";
+export const HOME_SCREEN_DATA = `${URL}/graphql/execute.json/wknd/native-app-home`;
+export const ADVENTURES_DATA = `${URL}/graphql/execute.json/wknd/native-app-adventures`;
+export const ARTICLE_DATA = `${URL}/graphql/execute.json/wknd/native-app-adventure%3bapath=`;
+
 const Theme = {
   ...DefaultTheme,
   dark: false,

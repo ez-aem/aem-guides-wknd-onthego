@@ -1,7 +1,7 @@
 import * as React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
-import Theme from "../Theme";
+import Theme from "../CONSTANTS";
 import Icon from "../components/Icon";
 import HomeNavigator from "./HomeNavigator";
 import AdventuresNavigator from "./AdventuresNavigator";

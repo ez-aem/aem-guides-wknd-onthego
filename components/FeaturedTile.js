@@ -1,9 +1,13 @@
 import * as React from "react";
 import { Dimensions, ImageBackground, Pressable, StyleSheet, View, Text } from "react-native";
 
+import { URL } from "../CONSTANTS";
+
 export default function FeaturedTile(props) {
-  const { subtitle, title, imagePath, } = props;
+  const { subtitle, title } = props;
   const navigation = props.navigation || null;
+  let { imagePath } = props;
+  if (!imagePath.startsWith(URL)) imagePath = `${URL}${imagePath}`
 
   const styles = StyleSheet.create({
     pressable: {
