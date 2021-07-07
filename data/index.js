@@ -18,6 +18,6 @@ export default async function fetchData(endpoint = false, articlePath = false) {
       break;
   }
 
-  const response = await fetch(url);
+  const response = await fetch(url, { mode: "no-cors" });
   return await response.json();
 }
